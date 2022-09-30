@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2017-2021 Alexey Khokholov (Nuke.YKT)
  *
- * This file is part of Nuked OPN2.
+ * This file is part of Nuked OPF2.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,7 +17,7 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- *  Nuked OPN2(Yamaha ym5173) emulator.
+ *  Nuked OPF2(Yamaha ym5173) emulator.
  *  Thanks:
  *      Silicon Pr0n:
  *          Yamaha ym5173 decap and die shot(digshadow).
@@ -196,14 +196,14 @@ typedef struct
     Bit32u status_time;
 } ym5173_t;
 
-void OPN2_Reset(ym5173_t *chip);
-void OPN2_SetChipType(Bit32u type);
-void OPN2_Clock(ym5173_t *chip, Bit16s *buffer);
-void OPN2_Write(ym5173_t *chip, Bit32u port, Bit8u data);
-void OPN2_SetTestPin(ym5173_t *chip, Bit32u value);
-Bit32u OPN2_ReadTestPin(ym5173_t *chip);
-Bit32u OPN2_ReadIRQPin(ym5173_t *chip);
-Bit8u OPN2_Read(ym5173_t *chip, Bit32u port);
+void OPF2_Reset(ym5173_t *chip);
+void OPF2_SetChipType(Bit32u type);
+void OPF2_Clock(ym5173_t *chip, Bit16s *buffer);
+void OPF2_Write(ym5173_t *chip, Bit32u port, Bit8u data);
+void OPF2_SetTestPin(ym5173_t *chip, Bit32u value);
+Bit32u OPF2_ReadTestPin(ym5173_t *chip);
+Bit32u OPF2_ReadIRQPin(ym5173_t *chip);
+Bit8u OPF2_Read(ym5173_t *chip, Bit32u port);
 
 #ifdef __cplusplus
 }
