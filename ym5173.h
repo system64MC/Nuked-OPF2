@@ -17,26 +17,26 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
- *  Nuked OPN2(Yamaha YM3438) emulator.
+ *  Nuked OPN2(Yamaha ym5173) emulator.
  *  Thanks:
  *      Silicon Pr0n:
- *          Yamaha YM3438 decap and die shot(digshadow).
+ *          Yamaha ym5173 decap and die shot(digshadow).
  *      OPLx decapsulated(Matthew Gambrell, Olli Niemitalo):
  *          OPL2 ROMs.
  *
  * version: 1.0.9
  */
 
-#ifndef YM3438_H
-#define YM3438_H
+#ifndef YM5173_H
+#define YM5173_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 enum {
-    ym3438_mode_ym2612 = 0x01,      /* Enables YM2612 emulation (MD1, MD2 VA2) */
-    ym3438_mode_readmode = 0x02     /* Enables status read on any port (TeraDrive, MD1 VA7, MD2, etc) */
+    ym5173_mode_ym2612 = 0x01,      /* Enables YM2612 emulation (MD1, MD2 VA2) */
+    ym5173_mode_readmode = 0x02     /* Enables status read on any port (TeraDrive, MD1 VA7, MD2, etc) */
 };
 
 #include <stdint.h>
@@ -194,16 +194,16 @@ typedef struct
     Bit8u pms[6];
     Bit8u status;
     Bit32u status_time;
-} ym3438_t;
+} ym5173_t;
 
-void OPN2_Reset(ym3438_t *chip);
+void OPN2_Reset(ym5173_t *chip);
 void OPN2_SetChipType(Bit32u type);
-void OPN2_Clock(ym3438_t *chip, Bit16s *buffer);
-void OPN2_Write(ym3438_t *chip, Bit32u port, Bit8u data);
-void OPN2_SetTestPin(ym3438_t *chip, Bit32u value);
-Bit32u OPN2_ReadTestPin(ym3438_t *chip);
-Bit32u OPN2_ReadIRQPin(ym3438_t *chip);
-Bit8u OPN2_Read(ym3438_t *chip, Bit32u port);
+void OPN2_Clock(ym5173_t *chip, Bit16s *buffer);
+void OPN2_Write(ym5173_t *chip, Bit32u port, Bit8u data);
+void OPN2_SetTestPin(ym5173_t *chip, Bit32u value);
+Bit32u OPN2_ReadTestPin(ym5173_t *chip);
+Bit32u OPN2_ReadIRQPin(ym5173_t *chip);
+Bit8u OPN2_Read(ym5173_t *chip, Bit32u port);
 
 #ifdef __cplusplus
 }
